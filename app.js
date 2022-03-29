@@ -25,6 +25,7 @@ app.get("/", (req,res)=>{
     homeStartingContent: homeStartingContent,
     posts: posts
   })
+
 });
 
 

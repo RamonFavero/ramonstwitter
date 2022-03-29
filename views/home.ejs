@@ -4,8 +4,10 @@
 
  <%  posts.forEach(function(post)  {  %>
 <h1><%=  post.newName %></h1>
-<p><%=  post.newText.substring(0,100)+" ..." %>    <a href="/posts/<%= post.number %>" >Read More</a></p>
-  <% });  %>
+<p><%=  post.newText.substring(0,100) %>
+    <%if(post.newText.length>100){%>
+    ... <a href="/posts/<%= post.number %>" >  Read More</a></p>
+  <%} });  %>
 
 
 
