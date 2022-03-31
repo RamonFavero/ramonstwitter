@@ -2,12 +2,14 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const ejs = require("ejs");
 const _ = require("lodash");
 
 
 const homeStartingContent = "";
-const aboutContent = "Carregador de Marcus e Paulo no video game Liga das Legendas.";
+const aboutContent =
+  "Carregador de Marcus e Paulo no video game Liga das Legendas.";
 const contactContent = "Só manda um zap. 😉";
 
 const app = express();
@@ -17,65 +19,134 @@ let numb = 0;
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(express.static("public"));
 
-app.get("/", (req,res)=>{
-  res.render("home", {
-    homeStartingContent: homeStartingContent,
-    posts: posts
-  })
+mongoose.connect('mongodb://localhost:27017/web-app');
 
+const userSchema = {
+  title: String,
+  corpo: String
+};
+
+const User = mongoose.model("user", userSchema);
+
+const item1 = new User({
+  title: "Ramon",
+  corpo: "primeiro teste"
+});
+const item2 = new User({
+  title: "Ramon2",
+  corpo: "segundo teste"
 });
 
+const defaultUser = [item1, item2];
 
-app.get("/posts/:link", function(req,res){
-const linkTitle = _.lowerCase(req.params.link);
 
-  posts.forEach(function(post)  {
-    const postTitle = _.lowerCase(post.number);
-const postTitle2 = post.newName;
-    const postText = post.newText;
-    const postNumber = post.number;
-    if (linkTitle === postTitle) {
+app.get("/", (req, res) => {
 
-      res.render("link", {postTitle2: postTitle2, postText:postText, postNumber: postNumber});
-  }
+  User.find({}, function(err, userItems) {
+
+    if (userItems.length === 0) {
+      User.insertMany(defaultUser, function(err) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.redirect("/")
+        }
+
+      });
+
+    } else {
+      res.render("home", {
+        homeStartingContent: homeStartingContent,
+        posts: userItems
+      });
+    };
+
   });
+});
+
+
+app.get("/posts/:link", function(req, res) {
+  const linkTitle = req.params.link;
+  User.find({}, function(err, users) {
+    User.findOne({_id:linkTitle},function(err,record) {
+  
+      if (!err) {
+
+        res.render("link", {
+          post: record
+        });
+      }
+
+
+    });
+  });
+  // console.log();
+  // posts.forEach(function(post) {
+  //   const postTitle = _.lowerCase(post.number);
+  //   const postTitle2 = post.newName;
+  //   const postText = post.newText;
+  //   const postNumber = post.number;
+  //   if (linkTitle === postTitle) {
+  //
+  //
+  //   }
+  // });
 
 
 });
 
 
 
-app.get("/about", (req,res)=>{
-  res.render("about", {aboutContent: aboutContent})
+app.get("/about", (req, res) => {
+  res.render("about", {
+    aboutContent: aboutContent
+  })
 });
 
-app.get("/contact", (req,res)=>{
-  res.render ("contact", {contactContent:contactContent})
+app.get("/contact", (req, res) => {
+  res.render("contact", {
+    contactContent: contactContent
+  })
 });
-app.get("/compose", (req,res)=>{
+app.get("/compose", (req, res) => {
   res.render("compose", )
 });
-app.post("/compose",(req,res)=>{
+app.post("/compose", (req, res) => {
+  const titleName = req.body.newName;
+  const corpoName = req.body.newText;
+  const newPost = new User({
+    title: titleName,
+    corpo: corpoName
+  });
+  User.find({}, function(err, foundList) {
+    if (!err) {
+      User.insertMany(newPost, function(err) {
+        if (!err) {
+          // console.log(newPost);
+          // defaultUser.push(newPost);
+          newPost.save();
+          res.redirect("/")
+        }
+      })
 
-const post = {
-newName: req.body.newName,
-newText: req.body.newText,
-number: posts.length
- };
-
-
-posts.push(post);
-
-  res.redirect("/")
+    };
+    // const post = {
+    // newName: req.body.newName,
+    // newText: req.body.newText,
+    // number: posts.length
+    //  };
+    //posts.push(post);
+  });
 });
-
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
 app.listen(port, function() {
- console.log("Server has started");
+  console.log("Server has started");
 });

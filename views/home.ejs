@@ -1,13 +1,14 @@
+
 <%- include("partials/header");-%>
 <h1>Home</h1>
 <h4 ><%= homeStartingContent %></h4>
 
  <%  posts.forEach(function(post)  {  %>
-<h1><%=  post.newName %></h1>
-<p><%=  post.newText.substring(0,100) %>
-    <%if(post.newText.length>100){%>
-    ... <a href="/posts/<%= post.number %>" >  Read More</a></p>
-  <%} });  %>
+   <a href="/posts/<%= post._id %>" ><h1><%=  post.title %></h1></a></p>
+   <a href="/posts/<%= post._id %>" ><p><%=  post.corpo %></a></p>
+
+
+  <%} );  %>
 
 
 

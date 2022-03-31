@@ -41,7 +41,12 @@ body {background-color:	#282828;
 	background-color: #484848;
 
 }
-
+a {
+    all: unset;
+}
+a:hover {
+    all: unset;
+}
 .footer p {
   position: relative;
   top: 20px;
