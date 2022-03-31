@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://localhost:27017/web-app');
+mongoose.connect('mongodb+srv://ramonfave:test123@cluster0.pypjk.mongodb.net/myFirstDatabase');
 
 const userSchema = {
   title: String,
@@ -74,7 +74,7 @@ app.get("/posts/:link", function(req, res) {
   const linkTitle = req.params.link;
   User.find({}, function(err, users) {
     User.findOne({_id:linkTitle},function(err,record) {
-  
+
       if (!err) {
 
         res.render("link", {
