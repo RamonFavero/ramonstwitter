@@ -9,7 +9,7 @@ const _ = require("lodash");
 
 const homeStartingContent = "";
 const aboutContent =
-  "Carregador de Marcus e Paulo no video game Liga das Legendas.";
+  "algo criativo ?.";
 const contactContent = "Só manda um zap. 😉";
 
 const app = express();
