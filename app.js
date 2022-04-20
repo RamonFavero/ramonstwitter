@@ -35,7 +35,7 @@ const User = mongoose.model("user", userSchema);
 
 
 
-const defaultUser = [item1, item2];
+const defaultUser = [];
 
 
 app.get("/", (req, res) => {
