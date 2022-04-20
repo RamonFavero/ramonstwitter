@@ -9,7 +9,7 @@ const _ = require("lodash");
 
 const homeStartingContent = "";
 const aboutContent =
-  "algo criativo ?";
+  "algo criativo?";
 const contactContent = "Só mandar um zap. 😉";
 
 const app = express();
