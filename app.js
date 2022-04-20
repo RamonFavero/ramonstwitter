@@ -9,8 +9,8 @@ const _ = require("lodash");
 
 const homeStartingContent = "";
 const aboutContent =
-  "algo criativo ?.";
-const contactContent = "Só manda um zap. 😉";
+  "algo criativo ?";
+const contactContent = "Só mandar um zap. 😉";
 
 const app = express();
 const posts = [];
@@ -33,14 +33,7 @@ const userSchema = {
 
 const User = mongoose.model("user", userSchema);
 
-const item1 = new User({
-  title: "Ramon",
-  corpo: "primeiro teste"
-});
-const item2 = new User({
-  title: "Ramon2",
-  corpo: "segundo teste"
-});
+
 
 const defaultUser = [item1, item2];
 
