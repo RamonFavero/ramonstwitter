@@ -33,9 +33,13 @@ const userSchema = {
 
 const User = mongoose.model("user", userSchema);
 
+const item1 = new User({
+  title: "This is a cheap coppy of twitter",
+  corpo: "in 'compose' you can make a post that is saved in a mongoDB server. "
+});
 
 
-const defaultUser = [];
+const defaultUser = [item1];
 
 
 app.get("/", (req, res) => {
