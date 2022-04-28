@@ -2,19 +2,18 @@
 <%- include("partials/header");-%>
 
 <h4 ><%= homeStartingContent %></h4>
-<div class="card">
+
 
 
  <%  posts.forEach(function(post)  {  %>
+   <div class="card">
    <div class="card2">
-
-
    <a href="/posts/<%= post._id %>" ><h1><%=  post.title %></h1></a></p>
    <a href="/posts/<%= post._id %>" ><p><%=  post.corpo %></a></p>
-
+</div>
  </div>
   <%} );  %>
-</div>
+
 
 
 

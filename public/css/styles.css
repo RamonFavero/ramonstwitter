@@ -21,6 +21,7 @@ body {background-color:	#282828;
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
@@ -62,18 +63,18 @@ a:hover {
 }
 /* From uiverse.io by @Tiagoadag */
 .card {
- width: 190px;
- height: 254px;
+ width: 590px;
+ height: 104px;
  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
  border-radius: 20px;
- transition: all .3s;
+ transition: all .1s;
 }
 
 .card2 {
- width: 190px;
- height: 254px;
+ width: 590px;
+ height: 104px;
  background-color: #1a1a1a;
- border-radius:;
+ border-radius: 10px;
  transition: all .2s;
 }
 
