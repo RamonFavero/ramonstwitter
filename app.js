@@ -13,7 +13,7 @@ const aboutContent =
 const contactContent = "Só mandar um zap. 😉";
 
 const app = express();
-const posts = ["a"];
+const posts = [];
 const number = [];
 let numb = 0;
 
