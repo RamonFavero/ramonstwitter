@@ -8,8 +8,7 @@ const _ = require("lodash");
 
 
 const homeStartingContent = "";
-const aboutContent =
-  "algo criativo ?";
+const aboutContent = "algo criativo ?";
 const contactContent = "Só mandar um zap. 😉";
 
 const app = express();
@@ -24,7 +23,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb+srv://ramonfave:test123@cluster0.pypjk.mongodb.net/myFirstDatabase');
+mongoose.connect('mongodb+srv://ramonfave:test123@cluster0.nxpmu2n.mongodb.net/?retryWrites=true&w=majority');
 
 const userSchema = {
   title: String,
