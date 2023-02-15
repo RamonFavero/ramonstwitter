@@ -1,20 +1,39 @@
-
+<% const images = '/images/' %>
+<% const png = '.png' %>
 <%- include("partials/header");-%>
 
-<h4 ><%= homeStartingContent %></h4>
+
+
+<div class="cardall">
+
+
 
 
 
  <%  posts.forEach(function(post)  {  %>
-   <div class="card">
-   <div class="card2">
-   <a href="/posts/<%= post._id %>" ><h1><%=  post.title %></h1></a></p>
-   <a href="/posts/<%= post._id %>" ><p><%=  post.corpo %></a></p>
+   <div  class="card2">
+  <form action="/posts/home" method="post">
+    <button  type="submit" name="butt" value="<%= post._id %>" class="cssbuttons-io-button">
+<img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" class="trashimg" alt="trash can">
+    </button>
+  </form>
+  <div class="compose-person">
+    <img class="img-min" src="/images/<%= post.image %>.png" alt="">
+  <h2 class=""><%= post.user %></h2>
+  </div>
+
+<a href="/posts/<%= post._id %>"><h1 class="ptext"><%=  post.title %></h1></a>
+   <a  href="/posts/<%= post._id %>" ><p class="ptext"><%=  post.corpo %></p></a>
 </div>
- </div>
   <%} );  %>
+</div>
+  <div class="card1">
+  <img class="homeimage" src="<%= images +logeduser.image + png %>"  alt="">
+<a><h1 class="ptext">Bem Vindo(a) <%= logeduser.username %></h1></a>
+<h3><%= logeduser.state %></h3>
 
-
+<h3><%= logeduser.date %></h3>
+</div>
 
 
 

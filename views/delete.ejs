@@ -1,0 +1,10 @@
+<%- include("partials/header");-%>
+<!-- <form  action="http://localhost:3000/posts/delete" method='delete'>
+  <input type="submit">
+</form> -->
+<form action="/posts/delete" method="post">
+
+   <button type="submit" name="button" onclick="deleteAll()" class="cssbuttons-io-button">Delete All</button>
+</form>
+
+<%- include("partials/footer");-%>

@@ -1,0 +1,100 @@
+<% const images = '/images/' %>
+<% const png = '.png' %>
+<script>
+const getvalue = nm => {
+    document.getElementById('main').value = nm
+}
+  const change = url => {
+      document.getElementById('main').style.backgroundImage = "url("+url+")"
+  }
+</script>
+<%- include("partials/header");-%>
+<form class="form card" action="/posts/register" method="post">
+  <div class="cardtest">
+
+    <div class="field">
+      <label class="labellogin" for="birthdate">Birth Date</label>
+      <input  class="input" name="date" type="date" placeholder="date" id="date">
+    </div>
+
+    <div class="field">
+      <label class="labellogin" for="state">Where do you live currently?</label>
+      <select  class="input" name="state" id="state">
+        <option value="estado">Select the state</option>
+            <option value="Acre">Acre</option>
+            <option value="Alagoas">Alagoas</option>
+            <option value="Amazonas">Amazonas</option>
+            <option value="Amapá">Amapá</option>
+            <option value="Bahia">Bahia</option>
+            <option value="Ceará">Ceará</option>
+            <option value="Distrito Federal">Distrito Federal</option>
+            <option value="Espírito">Espírito Santo</option>
+            <option value="Goiás">Goiás</option>
+            <option value="Maranhão">Maranhão</option>
+            <option value="Mato Grosso">Mato Grosso</option>
+            <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+            <option value="Minas Gerais">Minas Gerais</option>
+            <option value="Pará">Pará</option>
+            <option value="Paraíba">Paraíba</option>
+            <option value="Paraná">Paraná</option>
+            <option value="Pernambuco">Pernambuco</option>
+            <option value="Piauí">Piauí</option>
+            <option value="Rio de Janeiro">Rio de Janeiro</option>
+            <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+            <option value="Rondônia">Rondônia</option>
+            <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+            <option value="Roraima">Roraima</option>
+            <option value="Santa Catarina">Santa Catarina</option>
+            <option value="Sergipe">Sergipe</option>
+            <option value="São Paulo">São Paulo</option>
+            <option value="Tocantins">Tocantins</option>
+          </select>
+    </div>
+
+    <div class="dropdown">
+      <div class="container" style="width: 140px;">
+             <div class="main_view">
+                 <input type="text" value="" style="background-image: url('/images/1.png');width: 100px;height:100px;color: transparent;" id="main" name="image">
+             </div>
+      <label class="labellogin" for="image">Profile picture🔽
+    <div class="dropdown-content">
+<% for (var i = 1; i < 9; i++) {  %>
+  <img src="<%= images + i + png %>" name="<%= i %>"  onclick="change(this.src);getvalue(this.name)">
+
+<% }; %>
+  </div></label>
+</div>
+
+
+   </div>
+</div>
+<div class="card_header">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+    <path fill="none" d="M0 0h24v24H0z"></path>
+    <path fill="currentColor" d="M4 15h2v5h12V4H6v5H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6zm6-4V8l5 4-5 4v-3H2v-2h8z"></path>
+  </svg>
+  <h1 class="form_heading">Register</h1>
+</div>
+<div class="field">
+  <label class="labellogin" for="username">Username</label>
+  <% if (nomeExistente2) { %>
+    <label class="labellogin2"><%= nomeExistente %></label>
+  <% } %>
+  <input class="input" name="username" type="text" placeholder="Username" id="username">
+</div>
+<div class="field">
+  <label class="labellogin" for="password">Password</label>
+  <input class="input" name="password" type="password" placeholder="Password" id="password">
+</div>
+<div class="field">
+  <label class="labellogin" for="password">Repeat Password</label>
+  <% if (naoCondiz2) { %>
+    <label class="labellogin2"><%= naoCondiz %></label>
+  <% } %>
+  <input class="input" name="password2" type="password" placeholder="Repeat Password" id="password">
+</div>
+<div class="field">
+  <button class="buttonlogin">Login</button>
+</div>
+</form>
+<%- include("partials/footer");-%>

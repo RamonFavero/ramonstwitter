@@ -1,88 +1,344 @@
-body {background-color:	#282828;
-  color: 	#A8A8A8;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+body {
+  background-color: #282828;
+  color: #A8A8A8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
+
 .navbarname {
   color: #1abc9c !important;
-
 }
+
 .navbar {
-  background-color: 	#484848;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-
+  background-color: #484848;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
 }
-.navbar-nav  li a:hover {
-    color: #1abc9c !important;
+
+.navbar-nav li a:hover {
+  color: #1abc9c !important;
 }
 
 .footer-padding {
   position: absolute;
-	padding-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .footer {
   margin-top: auto;
-	position: sticky;
-	text-align: center;
-	bottom: 0;
-	width: 100%;
-	height: 60px;
-	background-color: #484848;
+  position: sticky;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #484848;
+}
 
-}
 a {
-    all: unset;
+  all: unset;
 }
+
 a:hover {
-    all: unset;
+  all: unset;
 }
+
+.field a {
+  text-decoration: underline;
+}
+
 .footer p {
   position: relative;
   top: 20px;
-	margin-top: 5px;
-	font-size: 12px;
+  margin-top: 5px;
+  font-size: 12px;
   color: #fff;
 }
+
 .text {
   white-space: nowrap;
   overflow: hidden;
-   text-overflow: ellipsis;
-   max-width: 700px;
+  text-overflow: ellipsis;
+  max-width: 700px;
 }
+
 /* From uiverse.io by @Tiagoadag */
-.card {
- width: 590px;
- height: 104px;
- background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
- border-radius: 20px;
- transition: all .1s;
+.cardall {
+  float: left;
+}
+
+.card1 {
+  float: right;
+  margin-top: 10px;
+  width: 500px;
+  height: 800px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  text-indent: 15px;
 }
 
 .card2 {
- width: 590px;
- height: 104px;
- background-color: #1a1a1a;
- border-radius: 10px;
- transition: all .2s;
+  margin-top: 10px;
+  width: 590px;
+  height: auto;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  text-indent: 15px;
+}
+
+.ptext {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 0px;
+  margin-left: 10px;
+  word-break: break-word;
 }
 
 .card2:hover {
- transform: scale(0.98);
- border-radius: 20px;
+  transform: scale(0.99);
+  border-radius: 5px;
 }
 
-.card:hover {
- box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+.trashimg {
+  width: 10px;
+  height: 10px;
+}
+
+.cssbuttons-io-button {
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  float: right;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border: 0px solid transparent;
+  background-color: #1abc9c;
+  border-radius: 1.25em;
+}
+
+.cardtest {
+  float: right;
+  margin-left: 10px;
+  padding-left: 10px;
+  width: 220px;
+  height: 300px;
+  border: 1px solid white;
+}
+
+/* From uiverse.io by @alexmaracinaru */
+.cardlogin {
+  float: left;
+  margin-left: 40%;
+  width: flex;
+  height: flex;
+  background: #363c4b;
+  border: 1px solid white;
+  box-shadow: 10px 10px 64px 0px rgba(120, 120, 221, 0.75);
+  -webkit-box-shadow: 10px 10px 64px 0px rgba(114, 114, 119, 0.75);
+  -moz-box-shadow: 10px 10px 64px 0px rgba(73, 73, 77, 0.75);
+}
+
+.card {
+  float: left;
+  margin-left: 30%;
+  width: flex;
+  height: flex;
+  background: #363c4b;
+  border: 1px solid white;
+  box-shadow: 10px 10px 64px 0px rgba(120, 120, 221, 0.75);
+  -webkit-box-shadow: 10px 10px 64px 0px rgba(114, 114, 119, 0.75);
+  -moz-box-shadow: 10px 10px 64px 0px rgba(73, 73, 77, 0.75);
+}
+
+.form {
+  margin-top: 15px;
+  padding: 25px;
+}
+
+.card_header {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+
+.card svg {
+  color: #7878bd;
+  margin-bottom: 19px;
+  margin-right: 5px;
+}
+
+.form_heading {
+  padding-bottom: 15px;
+  font-size: 21px;
+  color: #7878bd;
+}
+
+.field {
+  width: 200px;
+  padding-bottom: 6px;
+}
+
+.input {
+  border-radius: 5px;
+  background-color: #e9e9f7;
+  padding: 5px;
+  width: 100%;
+  color: #7a7ab3;
+  border: 1px solid #dadaf7
+}
+
+.input:focus-visible {
+  outline: 1px solid #aeaed6;
+}
+
+.input::placeholder {
+  color: #bcbcdf;
+}
+
+.labellogin {
+  color: #B2BAC8;
+  font-size: 14px;
+  display: block;
+  padding-bottom: 4px;
+}
+
+.labellogin2 {
+  color: #FF0000;
+  font-size: 12px;
+  display: block;
+  padding-bottom: 4px;
+}
+
+.buttonlogin {
+  background-color: #7878bd;
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 7px 12px;
+  font-weight: 500;
+  color: white;
+}
+
+.buttonlogin:hover {
+  background-color: #5f5f9c;
+}
+
+/////////////////////////////////////////////////////////////////
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+
+}
+
+.dropinp {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 1px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin: 1px 1px 1px 1px;
+}
+
+.dropdown-content {
+  display: none;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  background-color: #7878bd;
+  width: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content input {
+  color: black;
+  padding: 0;
+  display: flex;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: grid;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+///////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+.container{
+       margin: 0 auto;
+       width: 100px;
+   }
+   .main_view{
+       width: 100px;
+       height: 100px;
+       background-size: cover;
+   }
+   .main_view img{
+       width: 100px;
+       height: 100px;
+       object-fit: cover;
+   }
+   .side_view{
+       display: flex;
+       justify-content: center;
+       flex-wrap: wrap;
+   }
+   .side_view img{
+     width: 100px;
+     height: 100px;
+       object-fit: cover;
+       cursor: pointer;
+       margin:0.5rem;
+   }
+
+/////////////////////////////////
+
+.homeimage {
+  width: 100px;
+  height: 100px;
+   display: flex;
+   background-color: rgba(255, 255, 255, 0.2);
+   border: 1px solid rgba(0, 0, 0, 0.4);
+   border-radius: 1px;
+   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+   margin: 1px 1px 1px 1px;
+}
+
+
+.compose-person {
+ flex-flow: row;
+   display: flex;
+
+}
+.img-min {
+  width:50px;
+  height:50px;
+  margin: 10px 0px 10px 10px;
+  border-radius: 30px;
 }

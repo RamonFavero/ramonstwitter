@@ -4,16 +4,23 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node home.ejs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^16.0.2",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "express-session": "^1.17.3",
     "git": "^0.1.5",
+    "html-form-enhancer": "^0.1.11",
     "lodash": "^4.17.21",
-    "mongoose": "^6.2.9"
+    "mongoose": "^6.2.9",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2"
   }
 }
