@@ -1,4 +1,4 @@
-para ver esse projeto digite
+para ver esse projeto digite em um terminal
 - git clone https://github.com/RamonFavero/ramonstwitter.git
 - npm i
 - nodemon app.js
