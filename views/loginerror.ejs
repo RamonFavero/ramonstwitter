@@ -10,7 +10,9 @@
     <h1 class="form_heading">Sign in</h1>
   </div>
   <div class="field">
-  
+    <% if (message2) { %>
+      <label class="labellogin2"><%= message %></label>
+    <% } %>
     <label class="labellogin" for="username">Username</label>
     <input class="input" name="username" type="text" placeholder="Username" id="username">
   </div>

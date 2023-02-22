@@ -10,6 +10,8 @@ const session = require("express-session");
 const passportLocalMongoose = require("passport-local-mongoose");
 const env = require('dotenv').config();
 
+const message = "Login ou senha incorreto"
+let message2 = true
 const nomeExistente = "Esse nome já existe";
 let nomeExistente2 = false;
 const naoCondiz = "As senhas não condizem";
@@ -90,8 +92,13 @@ app.get("/posts", (req,res)=>{
 });
 
 app.get("/posts/login", (req, res) => {
-
-res.render("login",{});
+res.render("login");
+});
+app.get("/posts/loginerror", (req, res) => {
+res.render("loginerror",{
+  message:message,
+  message2:message2
+});
 });
 
 app.get("/posts/home", (req, res) => {
@@ -134,7 +141,7 @@ app.get("/posts/register", (req, res) => {
     nomeExistente2:nomeExistente2
   });
 });
-app.post("/posts/login", (req, res) => {
+app.post("/posts/login", (req, res,next) => {
 
   const login = new Login ({
     username:req.body.username,
@@ -144,8 +151,8 @@ req.login(login, function(err) {
   if (err) {
     console.log(err);
   }else {
-    passport.authenticate("local")(req,res,function() {
-      res.redirect("/posts/home");
+    passport.authenticate("local",{failureRedirect:"loginerror"})(req,res,function() {
+  res.redirect("/posts/home");
     })
   }
 })
