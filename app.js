@@ -40,7 +40,7 @@ app.use(passport.session());
 
 const user = process.env.DB_USER;
 const pass = process.env.DB_PASS;
-const db = 'mongodb+srv://'+user+':'+pass+'@cluster0.todmw9f.mongodb.net/?retryWrites=true&w=majority'
+const db = 'mongodb+srv://ramonfave:OCNGkRBOn6UWb5mk@cluster0.todmw9f.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(db);
 
 const userSchema = new mongoose.Schema( {
