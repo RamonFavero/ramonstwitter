@@ -293,6 +293,6 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
-app.listen(port, function() {
+app.listen(port, "0.0.0.0", function() {
   console.log("Server has started on port "+port);
 });
